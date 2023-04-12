@@ -17,16 +17,10 @@ jobs:
       with:
         node-version: '16.18.0'
     - name: Install dependencies
-      run: npm ci
+      run: npm i
       
     - name: Run Cypress tests
       run: npx cypress run --browser chrome --headless --env allure=true
-      
-    - name: Install allure
-      run: npm i @shelex/cypress-allure-plugin
-   
-    - name: Install allure comanline
-      run: npm i allure-commandline
       
     - name: Reports Generate
       run: npm run allure:clear
