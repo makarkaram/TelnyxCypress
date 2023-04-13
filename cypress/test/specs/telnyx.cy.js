@@ -94,6 +94,7 @@ describe('"Telnyx" test', () => {
     })
     it('TX_008 Check that "Confirm email" page is loading after clicking "Submit" button on Sign Up page with filling in the correct data in the required fields and "Promo Code" field', () => {
         MainPage.clickHeaderSignUpButton()
+        SignUpPage.submitButton().should('be.visible')
         SignUpPage.enterEmailFieldValue(Email)
         SignUpPage.enterFullNameFieldValue(Name)
         SignUpPage.enterPasswordFieldValue(Password)
