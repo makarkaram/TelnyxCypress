@@ -5,7 +5,7 @@ class ContactUsPage{
     clickSubmitButton() {
         this.submitButton().click()
     }
-    checkSubmitButtomIsDisplayed() {
+    acceptCookies() {
         this.submitButton().then(($pass) => {
             if (expect($pass).to.be.visible) {
                 this.clickSubmitButton()

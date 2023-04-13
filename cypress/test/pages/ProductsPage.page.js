@@ -18,7 +18,8 @@ class ProductsPage{
         return cy.get('#storage').first()
     }
     clickContactUsButton() {
-       this.contactUsButton().click()
+        this.contactUsButton().scrollIntoView()
+        this.contactUsButton().click()
     }
     checkProductsTextVisibility() {
         this.productsText().should('be.visible')

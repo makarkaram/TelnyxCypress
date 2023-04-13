@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "node-allure-install": "npm i && @shelex/cypress-allure-plugin && allure-commandline",
     "open": "cypress open",
     "reporter-headless": "cypress run --browser chrome --headless --env allure=true",
     "allure:report": "allure serve allure-results",

@@ -23,9 +23,9 @@ describe('"Telnyx" test', () => {
         Text = TextGenerator.randomLongText()
         Password = TextGenerator.randomPassword()
         cy.visit("/")
-        CoockiesPage.checkSubmitButtomIsDisplayed()
+        CoockiesPage.acceptCookies()
     })
-    it('TX_001 Test Contact Us form via Header button with positive scenario', () => {
+    it('TX_001 Test the "Contact Us" form with positive scenario', () => {
         MainPage.clickContactUsButton()
         ContactUsPage.selectSupportOptionInReasonForContactDropdown()
         ContactUsPage.enterFirstNameFieldValue(Name)
@@ -39,7 +39,7 @@ describe('"Telnyx" test', () => {
         ContactUsPage.clickSubmitButton()
         ContactUsPage.checkSubmitMessageTextVisibility()
     })
-    it('TX_002 Test Contact Us form via "Products" page with positive scenario', () => {
+    it('TX_002 Test the "Contact Us" form with positive scenario', () => {
         MainPage.clickProductsDropdown()
         MainPage.clickSeeAllProductsButton()
         ProductsPage.clickContactUsButton()
@@ -55,12 +55,12 @@ describe('"Telnyx" test', () => {
         ContactUsPage.clickSubmitButton()
         ContactUsPage.checkSubmitMessageTextVisibility()
     }) 
-    it('TX_003 Test Contact Us form via Main page with negative scenario where all fields are empty', () => {
+    it('TX_003 Test the "Contact Us" formwith negative scenario when all fields are left empty', () => {
         MainPage.clickContactUsButton()
         ContactUsPage.clickSubmitButton()
         ContactUsPage.checkErrorMesageTextVisibility()
     })
-    it('TX_004 Chech that "Support Center" button navigate to "https://support.telnyx.com/en/" page on the "Contact us" page', () => {
+    it('TX_004 Chech that "Support Center" link navigate to "Support Center" page from the "Contact us" page', () => {
         MainPage.clickContactUsButton()
         ContactUsPage.scrollToSupportCenterButton()
         ContactUsPage.clickSupportCenterButton()
@@ -82,7 +82,7 @@ describe('"Telnyx" test', () => {
         SignInPage.clickLogInButton()
         SignInPage.checkErrorTextMesageVisibility()
     })
-    it('TX_007 Test Sign Up form via Main page with filling the correct data in the required fields', () => {
+    it('TX_007 Check that "Confirm email" page is loading after clicking "Submit" button on Sign Up page with filling the correct data in the required fields', () => {
         MainPage.clickHeaderSignUpButton()
         SignUpPage.submitButton().should('be.visible')
         SignUpPage.enterEmailFieldValue(Email)
@@ -92,9 +92,8 @@ describe('"Telnyx" test', () => {
         SignUpPage.clickSubmitButton()
         SignUpPage.checkSubmitTextMessageVisibility()
     })
-    it('TX_008 Test Sign Up form via Main page with filling in the correct data in the required fields and "Promo Code" field', () => {
+    it('TX_008 Check that "Confirm email" page is loading after clicking "Submit" button on Sign Up page with filling in the correct data in the required fields and "Promo Code" field', () => {
         MainPage.clickHeaderSignUpButton()
-        SignUpPage.submitButton().should('be.visible')
         SignUpPage.enterEmailFieldValue(Email)
         SignUpPage.enterFullNameFieldValue(Name)
         SignUpPage.enterPasswordFieldValue(Password)
@@ -104,7 +103,7 @@ describe('"Telnyx" test', () => {
         SignUpPage.clickSubmitButton()
         SignUpPage.checkSubmitTextMessageVisibility()
     })
-    it('TX_009 Verify subtitles in the "Your one-stop shop for distributed infrastructure." text and sections on Products page', () => {
+    it('TX_009 Check that "Communications", "Networking", "Wireless", "Storage" options are visible on Products page', () => {
         MainPage.clickProductsDropdown()
         MainPage.clickSeeAllProductsButton()
         ProductsPage.checkProductsTextVisibility()
@@ -113,7 +112,7 @@ describe('"Telnyx" test', () => {
         ProductsPage.checkProductsTextVisibility()
         ProductsPage.checkStorageWindowVisibility()
     }) 
-    it('TX_010 Test Sign In form via Contact Us page with negative scenario where all fields are filled with incorrect credentials', () => {
+    it('TX_010 Test Sign In form from Contact Us page with negative scenario where all fields are filled with incorrect credentials', () => {
         MainPage.clickContactUsButton()
         ContactUsPage.scrollDownToLogInButton()
         ContactUsPage.clickLogInButton()
