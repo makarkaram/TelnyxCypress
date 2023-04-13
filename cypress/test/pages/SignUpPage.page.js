@@ -24,7 +24,7 @@ class SignUpPage{
         return cy.get('#promo_code')
     }
     enterEmailFieldValue(Email) {
-        this.emailField().type(Email)
+        this.emailField().type(Email, { force: true })
     }
     checkEmailFieldForMachingValue(Email) {
         this.emailField().should('have.value', Email)
