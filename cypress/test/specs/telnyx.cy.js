@@ -25,7 +25,7 @@ describe('"Telnyx" test', () => {
         cy.visit("/")
         CoockiesPage.acceptCookies()
     })
-    it('TX_001 Test the "Contact Us" form with positive scenario', () => {
+    it('TX_001 Test the "Contact Us" form with positive scenario, form opened via header link from the main page', () => {
         MainPage.clickContactUsButton()
         ContactUsPage.selectSupportOptionInReasonForContactDropdown()
         ContactUsPage.enterFirstNameFieldValue(Name)
@@ -39,7 +39,7 @@ describe('"Telnyx" test', () => {
         ContactUsPage.clickSubmitButton()
         ContactUsPage.checkSubmitMessageTextVisibility()
     })
-    it('TX_002 Test the "Contact Us" form with positive scenario', () => {
+    it('TX_002 Test the "Contact Us" form with positive scenario, form opened via link from the Products page', () => {
         MainPage.clickProductsDropdown()
         MainPage.clickSeeAllProductsButton()
         ProductsPage.clickContactUsButton()
