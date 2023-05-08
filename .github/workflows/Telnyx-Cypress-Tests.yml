@@ -1,4 +1,4 @@
-name: Telnyx Tests
+name: e2e telnyx tests
 on:
   push:
     branches: [ main ]
@@ -46,6 +46,6 @@ jobs:
       if: always()
       uses: peaceiris/actions-gh-pages@v2
       env:
-          PERSONAL_TOKEN: ${{ secrets.TOKEN123 }}
+          PERSONAL_TOKEN:  ${{ secrets.TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
