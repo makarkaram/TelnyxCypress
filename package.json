@@ -1,15 +1,25 @@
 {
+  "name": "cypress",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "open": "cypress open",
+    "cypress:open": "cypress open",
     "reporter-headless": "cypress run --browser chrome --headless --env allure=true",
     "allure:report": "allure serve allure-results",
     "allure:clear": "allure generate allure-results --clean -o allure-report"
   },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.38.3",
-    "cypress": "^12.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "@shelex/cypress-allure-plugin": "^2.38.3"
   },
   "dependencies": {
-    "allure-commandline": "^2.21.0"
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.15",
+    "cypress": "^12.10.0"
+    
   }
 }
